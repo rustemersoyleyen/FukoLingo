@@ -1,0 +1,28 @@
+# API Anahtarları ve Gizli Bilgiler
+js/gemini-config.js
+
+# Node modules
+node_modules/
+
+# IDE ve Editor ayarları
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# İşletim Sistemi dosyaları
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log dosyaları
+*.log
+npm-debug.log*
+
+# Geçici dosyalar
+*.tmp
+*.temp
+
+# Test dosyaları (opsiyonel)
+test-*.html

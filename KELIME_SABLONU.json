@@ -1,0 +1,77 @@
+{
+  "_aciklama": "Bu dosya yeni kelime eklemeniz için bir şablondur. Kelimeleri js/data.js dosyasına ekleyin.",
+  "_kullanim": "Her kelime için aşağıdaki formatı kullanın",
+  
+  "ornek_kelime": {
+    "english": "happy",
+    "turkish": "mutlu",
+    "pronunciation": "/ˈhæpi/",
+    "example": "I am very happy today.",
+    "exampleTr": "Bugün çok mutluyum.",
+    "image": "😊"
+  },
+
+  "_alan_aciklamalari": {
+    "english": "İngilizce kelime (küçük harfle)",
+    "turkish": "Türkçe anlamı",
+    "pronunciation": "IPA formatında telaffuz (https://tophonetics.com kullanabilirsiniz)",
+    "example": "İngilizce örnek cümle (kelimeyi içermeli)",
+    "exampleTr": "Örnek cümlenin Türkçe çevirisi",
+    "image": "Emoji veya 'images/dosya-adi.png' formatında görsel yolu"
+  },
+
+  "_yeni_unite_sablonu": {
+    "id": 7,
+    "title": "Unit 7 - Ünite Adı",
+    "icon": "🎨",
+    "description": "Ünite açıklaması",
+    "words": [
+      {
+        "english": "word1",
+        "turkish": "kelime1",
+        "pronunciation": "/wɜːrd/",
+        "example": "This is word1 in a sentence.",
+        "exampleTr": "Bu cümlede kelime1 var.",
+        "image": "🔤"
+      },
+      {
+        "english": "word2",
+        "turkish": "kelime2",
+        "pronunciation": "/wɜːrd/",
+        "example": "This is word2 in a sentence.",
+        "exampleTr": "Bu cümlede kelime2 var.",
+        "image": "🔤"
+      }
+    ]
+  },
+
+  "_populer_emojiler": {
+    "yiyecekler": "🍎🍊🍋🍌🍉🍇🍓🍑🥭🍍🥥🥝🍅🍆🥑🥦🥬🥒🌶️🌽🥕🥔🍠🥐🥯🍞🥖🥨🧀🥚🍳🧈🥞🧇🥓🥩🍗🍖🌭🍔🍟🍕🥪🌮🌯🥙🧆🥗",
+    "hayvanlar": "🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐸🐵🐔🐧🐦🦅🦆🦉🐺🐗🐴🦄🐝🐛🦋🐌🐞🐢🐍🦎🐙🦑🦐🦞🦀🐡🐠🐟🐬🐳🐋🦈",
+    "mekanlar": "🏠🏡🏢🏣🏤🏥🏦🏨🏩🏪🏫🏬🏭🏯🏰💒🗼🗽⛪🕌🛕🕍⛩️🕋⛲⛺🌁🌃🏙️🌄🌅🌆🌇",
+    "aktiviteler": "⚽🏀🏈⚾🎾🏐🏉🥏🎱🪀🏓🏸🏒🏑🥍🏏🥅⛳🪁🏹🎣🤿🥊🥋🎽🛹🛷⛸️🥌🎿⛷️🏂🪂",
+    "nesneler": "📱💻⌨️🖥️🖨️🖱️🖲️🕹️🗜️💾💿📀📼📷📸📹🎥📽️🎞️📞☎️📟📠📺📻🎙️🎚️🎛️🧭⏱️⏲️⏰🕰️",
+    "duygular": "😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗☺️😚😙🥲😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😏😒🙄😬🤥😌",
+    "dogaa": "☀️🌤️⛅🌥️☁️🌦️🌧️⛈️🌩️🌨️❄️💨💧💦☔⛱️⚡🌈⭐🌟💫✨🌙",
+    "ulasim": "🚗🚕🚙🚌🚎🏎️🚓🚑🚒🚐🛻🚚🚛🚜🦯🦽🦼🛴🚲🛵🏍️🛺🚨🚔🚍🚘🚖",
+    "meslekler": "👨‍⚕️👩‍⚕️👨‍🎓👩‍🎓👨‍🏫👩‍🏫👨‍⚖️👩‍⚖️👨‍🌾👩‍🌾👨‍🍳👩‍🍳👨‍🔧👩‍🔧👨‍🏭👩‍🏭👨‍💼👩‍💼👨‍🔬👩‍🔬👨‍💻👩‍💻👨‍🎤👩‍🎤👨‍🎨👩‍🎨👨‍✈️👩‍✈️👨‍🚀👩‍🚀👨‍🚒👩‍🚒👮‍♂️👮‍♀️"
+  },
+
+  "_telaffuz_kaynaklar": {
+    "tophonetics": "https://tophonetics.com/ - Otomatik IPA çevirici",
+    "cambridge": "https://dictionary.cambridge.org/ - Cambridge sözlük",
+    "merriam_webster": "https://www.merriam-webster.com/ - Merriam-Webster",
+    "wiktionary": "https://en.wiktionary.org/ - Ücretsiz sözlük",
+    "youglish": "https://youglish.com/ - Gerçek kullanım örnekleri"
+  },
+
+  "_ipuclari": [
+    "Örnek cümle basit ve anlaşılır olmalı",
+    "Kelime cümlede net bir şekilde kullanılmalı",
+    "Her ünitede 8-12 kelime ideal",
+    "Kelimeleri zorluk seviyesine göre sıralayın",
+    "Günlük hayatta kullanılan kelimeleri seçin",
+    "Görsel emoji ise konuyla alakalı seçin",
+    "Telaffuz için güvenilir kaynak kullanın"
+  ]
+}

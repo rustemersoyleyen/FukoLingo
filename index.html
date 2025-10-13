@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FukoLingo - İngilizce Kelime Öğrenme Platformu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ana Sayfa Container -->
+    <div class="container">
+        <!-- Başlık ve Logo -->
+        <header class="header">
+            <div class="logo">
+                <h1>🦁 FukoLingo</h1>
+                <p class="tagline">İngilizce Öğrenmek Çok Eğlenceli!</p>
+            </div>
+            <div class="user-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value" id="totalPoints">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-value" id="totalWords">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <!-- Hoş Geldin Mesajı -->
+            <div class="welcome-card">
+                <h2>Merhaba! 👋</h2>
+                <p>Bugün hangi üniteyi öğrenmek istersin?</p>
+            </div>
+
+            <!-- Ünite Seçim Alanı -->
+            <div class="units-container" id="unitsContainer">
+                <!-- Üniteler JavaScript ile yüklenecek -->
+            </div>
+
+            <!-- Öğrenme Alanı (Başlangıçta gizli) -->
+            <div class="learning-area hidden" id="learningArea">
+                <div class="learning-header">
+                    <button class="btn-back" id="btnBack">⬅️ Geri Dön</button>
+                    <h2 id="currentUnitTitle"></h2>
+                </div>
+
+                <!-- Mod Seçimi -->
+                <div class="mode-selection" id="modeSelection">
+                    <div class="mode-card" data-mode="flashcards">
+                        <div class="mode-icon">🎴</div>
+                        <h3>Flash Kartlar</h3>
+                        <p>Kelimeleri kartlarla öğren</p>
+                    </div>
+                    <div class="mode-card" data-mode="matching">
+                        <div class="mode-icon">🎯</div>
+                        <h3>Eşleştirme Oyunu</h3>
+                        <p>Kelimeleri eşleştir</p>
+                    </div>
+                    <div class="mode-card" data-mode="quiz">
+                        <div class="mode-icon">📝</div>
+                        <h3>Kelime Testi</h3>
+                        <p>Bilgini test et</p>
+                    </div>
+                    <div class="mode-card" data-mode="sentence">
+                        <div class="mode-icon">💬</div>
+                        <h3>Cümle Kurma</h3>
+                        <p>Cümle içinde kullan</p>
+                    </div>
+                    <div class="mode-card" data-mode="island" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <div class="mode-icon">🏝️</div>
+                        <h3>Ada Macerası</h3>
+                        <p>Keşfet ve öğren!</p>
+                    </div>
+                </div>
+
+                <!-- Aktivite Alanı -->
+                <div class="activity-area hidden" id="activityArea">
+                    <!-- Aktiviteler JavaScript ile yüklenecek -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🦁 FukoLingo - 6. Sınıf İngilizce Kelime Öğrenme Platformu</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Dosyaları -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/flashcards.js"></script>
+    <script src="js/matching.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/gemini-config.js"></script>
+    <script src="js/sentence-advanced.js"></script>
+    <!-- Kelime Adası Macerası -->
+    <script src="js/island-config.js"></script>
+    <script src="js/island-gemini.js"></script>
+    <script src="js/island-games.js"></script>
+    <script src="js/island-adventure.js"></script>
+</body>
+</html>

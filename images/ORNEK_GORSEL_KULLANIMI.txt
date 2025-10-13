@@ -1,0 +1,175 @@
+🖼️ ÖRNEK GÖRSEL KULLANIMI
+
+==============================================
+1. GÖRSEL HAZIRLIK
+==============================================
+
+A) AI İLE OLUŞTURMA (Önerilen)
+------------------------------
+Bing Image Creator: https://bing.com/create
+
+Prompt (Türkçe):
+"Çocuklar için eğitici bilgisayar illüstrasyonu, 
+basit çizim, renkli, beyaz arka plan"
+
+Prompt (İngilizce):
+"Simple laptop computer illustration for children's education,
+flat design, colorful, white background, cute style"
+
+İndir → computer.png olarak kaydet
+
+
+B) UNSPLASH'DAN İNDİRME
+------------------------------
+1. https://unsplash.com/s/photos/laptop adresine git
+2. Uygun bir görsel seç
+3. "Download free" → Küçük boyut (640px)
+4. İndir
+
+
+C) FLATİCON'DAN İKON
+------------------------------
+1. https://flaticon.com adresine git
+2. "laptop" ara
+3. Ücretsiz ikonu seç
+4. PNG formatında indir (512px)
+
+==============================================
+2. GÖRSEL OPTİMİZASYONU
+==============================================
+
+TinyPNG ile optimize et:
+1. https://tinypng.com adresine git
+2. Görseli sürükle-bırak
+3. Optimize edilmiş halini indir
+
+Hedef: < 50KB
+
+==============================================
+3. DOSYA YERLEŞTİRME
+==============================================
+
+Görseli buraya kopyala:
+d:\FukoLingo\images\computer.png
+
+İsimlendirme kuralları:
+✓ Küçük harf: computer.png
+✓ Tire ile ayır: happy-face.png
+✓ İngilizce: apple.png
+✗ Büyük harf: Computer.PNG
+✗ Boşluk: happy face.png
+✗ Türkçe karakter: elma.png
+
+==============================================
+4. DATA.JS GÜNCELLEMESİ
+==============================================
+
+ÖNCEKİ (Emoji):
+{
+    english: "computer",
+    turkish: "bilgisayar",
+    pronunciation: "/kəmˈpjuːtər/",
+    example: "I use my computer every day.",
+    exampleTr: "Her gün bilgisayarımı kullanırım.",
+    image: "💻"  // ← Emoji
+}
+
+GÜNCEL (Görsel):
+{
+    english: "computer",
+    turkish: "bilgisayar",
+    pronunciation: "/kəmˈpjuːtər/",
+    example: "I use my computer every day.",
+    exampleTr: "Her gün bilgisayarımı kullanırım.",
+    image: "images/computer.png"  // ← Görsel yolu
+}
+
+==============================================
+5. TEST
+==============================================
+
+1. Ctrl+S ile kaydet
+2. Tarayıcıda F5 ile yenile
+3. İlgili üniteyi aç
+4. Görselin düzgün yüklendiğini kontrol et
+
+Kontrol listesi:
+□ Görsel yükleniyor mu?
+□ Boyut uygun mu?
+□ Mobilde de iyi görünüyor mu?
+□ Flash kartlarda çalışıyor mu?
+□ Quiz'de görünüyor mu?
+
+==============================================
+6. SORUN GİDERME
+==============================================
+
+"Görsel görünmüyor":
+→ Dosya yolu kontrol: images/computer.png
+→ Dosya adı aynı mı? (büyük/küçük harf)
+→ F12 → Console → Hata mesajı var mı?
+
+"Görsel çok büyük/küçük":
+→ CSS'i kontrol et
+→ Görseli yeniden boyutlandır (500x500px)
+
+"Yavaş yükleniyor":
+→ Dosya boyutunu küçült (TinyPNG)
+→ Format değiştir (JPG daha küçük)
+
+==============================================
+7. KARMA KULLANIM
+==============================================
+
+Aynı ünitede emoji + görsel kullanabilirsiniz:
+
+{
+    english: "happy",
+    image: "😊"  // ← Emoji (duygu için ideal)
+},
+{
+    english: "computer", 
+    image: "images/computer.png"  // ← Görsel
+},
+{
+    english: "sad",
+    image: "😢"  // ← Emoji
+}
+
+NE ZAMAN EMOJİ:
+- Duygular (😊😢😠😴)
+- Basit nesneler (🍎☀️⚽)
+- Aktiviteler (🎮📚🎵)
+
+NE ZAMAN GÖRSEL:
+- Meslekler (profesyonel)
+- Karmaşık nesneler (bilgisayar, araba)
+- Özel konseptler
+- Marka kimliği istiyorsanız
+
+==============================================
+FAYDALÍ LİNKLER
+==============================================
+
+AI Görsel Oluşturma:
+→ Bing Image Creator: https://bing.com/create (ücretsiz)
+→ Leonardo.ai: https://leonardo.ai (150/gün ücretsiz)
+→ Playground AI: https://playgroundai.com
+
+Ücretsiz Görseller:
+→ Unsplash: https://unsplash.com
+→ Pexels: https://pexels.com
+→ Pixabay: https://pixabay.com
+
+İkonlar:
+→ Flaticon: https://flaticon.com
+→ Icons8: https://icons8.com
+
+Optimizasyon:
+→ TinyPNG: https://tinypng.com
+→ Squoosh: https://squoosh.app
+
+==============================================
+
+Detaylı rehber için:
+→ GORSEL_KULLANIM_REHBERI.md dosyasını okuyun

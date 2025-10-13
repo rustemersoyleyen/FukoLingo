@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FukoLingo - Storage Reset</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .reset-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .emoji {
+            font-size: 5rem;
+            margin: 20px 0;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .success {
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 20px;
+            display: none;
+        }
+        .info {
+            color: #6b7280;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="reset-container">
+        <div class="emoji">🦁</div>
+        <h1>FukoLingo Storage Reset</h1>
+        
+        <div class="info">
+            <p><strong>Ada Macerası güncellemesi!</strong></p>
+            <p>Yeni 6 ada sistemi için eski verileri temizlemeliyiz.</p>
+            <p>Puanlarınız kaybolmayacak!</p>
+        </div>
+        
+        <button onclick="resetIslandProgress()">
+            🗑️ Ada İlerlemesini Sıfırla
+        </button>
+        
+        <button onclick="resetAll()">
+            ⚠️ Tüm Verileri Sıfırla
+        </button>
+        
+        <button onclick="goToApp()" style="background: #10b981;">
+            ✅ Uygulamaya Dön
+        </button>
+        
+        <div class="success" id="successMessage"></div>
+    </div>
+
+    <script>
+        function resetIslandProgress() {
+            localStorage.removeItem('fukolingo_island_progress');
+            showSuccess('✅ Ada ilerlemesi sıfırlandı! Artık yeni sistemi kullanabilirsiniz.');
+        }
+
+        function resetAll() {
+            if (confirm('Tüm verileriniz silinecek! Emin misiniz?')) {
+                localStorage.clear();
+                showSuccess('✅ Tüm veriler temizlendi! Yeni başlangıç yapabilirsiniz.');
+            }
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+        }
+
+        function goToApp() {
+            window.location.href = 'index.html';
+        }
+
+        // Sayfa yüklendiğinde mevcut durumu göster
+        window.onload = function() {
+            const progress = localStorage.getItem('fukolingo_island_progress');
+            if (progress) {
+                console.log('Mevcut ada ilerlemesi:', JSON.parse(progress));
+            } else {
+                console.log('Ada ilerlemesi bulunamadı - temiz başlangıç!');
+            }
+        };
+    </script>
+</body>
+</html>
+
+
