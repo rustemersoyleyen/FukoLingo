@@ -137,6 +137,18 @@ function selectMode(mode) {
                 goBackToModeSelection();
             }
             break;
+        case 'timeExercises':
+            // Başlık güncelle
+            document.getElementById('currentUnitTitle').textContent = currentUnit.title + ' - Saat Egzersizleri';
+            // Saat egzersizlerini başlat
+            startTimeExercises(currentUnit.words, activityArea);
+            break;
+        case 'sequenceExercises':
+            // Başlık güncelle
+            document.getElementById('currentUnitTitle').textContent = currentUnit.title + ' - Sıralama Egzersizleri';
+            // Sıralama egzersizlerini başlat
+            startSequenceExercises(currentUnit.words, activityArea);
+            break;
     }
 }
 

@@ -134,7 +134,7 @@ git add .
 git commit -m "İlk commit: FukoLingo projesi"
 
 # 2. GitHub'a yükle (önce GitHub'da repository oluşturun)
-git remote add origin https://github.com/KULLANICI_ADINIZ/FukoLingo.git
+git remote add origin https://github.com/rustemersoyleyen/FukoLingo.git
 git branch -M main
 git push -u origin main
 
