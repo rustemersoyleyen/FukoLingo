@@ -444,16 +444,24 @@ class TimeExercises {
             feedback.innerHTML = `
                 <div class="feedback-correct">
                     ✅ Doğru! Harika!
-                    <button class="btn-primary" onclick="location.reload()">Sonraki Soru</button>
+                    <button class="btn btn-primary" id="nextQuestionBtn">Sonraki Soru</button>
                 </div>
             `;
+            
+            document.getElementById('nextQuestionBtn').addEventListener('click', () => {
+                this.readTimeExercise();
+            });
         } else {
             feedback.innerHTML = `
                 <div class="feedback-incorrect">
                     ❌ Yanlış. Doğru cevap: <strong>${correct}</strong>
-                    <button class="btn-primary" onclick="location.reload()">Tekrar Dene</button>
+                    <button class="btn btn-secondary" id="retryBtn">Tekrar Dene</button>
                 </div>
             `;
+            
+            document.getElementById('retryBtn').addEventListener('click', () => {
+                this.readTimeExercise();
+            });
         }
 
         document.querySelectorAll('.time-option').forEach(btn => {
@@ -469,11 +477,87 @@ class TimeExercises {
     }
 
     checkActivityAnswer(selected, correct) {
-        this.checkTimeAnswer(selected, correct);
+        this.totalQuestions++;
+        const feedback = document.getElementById('feedback');
+        
+        if (selected === correct) {
+            this.correctAnswers++;
+            this.score += 10;
+            feedback.innerHTML = `
+                <div class="feedback-correct">
+                    ✅ Doğru! Harika!
+                    <button class="btn btn-primary" id="nextActivityBtn">Sonraki Soru</button>
+                </div>
+            `;
+            
+            document.getElementById('nextActivityBtn').addEventListener('click', () => {
+                this.matchActivityExercise();
+            });
+        } else {
+            feedback.innerHTML = `
+                <div class="feedback-incorrect">
+                    ❌ Yanlış. Doğru cevap: <strong>${correct}</strong>
+                    <button class="btn btn-secondary" id="retryActivityBtn">Tekrar Dene</button>
+                </div>
+            `;
+            
+            document.getElementById('retryActivityBtn').addEventListener('click', () => {
+                this.matchActivityExercise();
+            });
+        }
+
+        document.querySelectorAll('.time-option').forEach(btn => {
+            btn.disabled = true;
+            if (btn.dataset.answer === correct) {
+                btn.classList.add('correct');
+            } else if (btn.dataset.answer === selected) {
+                btn.classList.add('incorrect');
+            }
+        });
+
+        this.updateScore();
     }
 
     checkAnswer(selected, correct) {
-        this.checkTimeAnswer(selected, correct);
+        this.totalQuestions++;
+        const feedback = document.getElementById('feedback');
+        
+        if (selected === correct) {
+            this.correctAnswers++;
+            this.score += 10;
+            feedback.innerHTML = `
+                <div class="feedback-correct">
+                    ✅ Harika! Doğru cevap!
+                    <button class="btn btn-primary" id="nextTimeQBtn">Sonraki Soru</button>
+                </div>
+            `;
+            
+            document.getElementById('nextTimeQBtn').addEventListener('click', () => {
+                this.timeQuestionsExercise();
+            });
+        } else {
+            feedback.innerHTML = `
+                <div class="feedback-incorrect">
+                    ❌ Yanlış. Doğru cevap: <strong>${correct}</strong>
+                    <button class="btn btn-secondary" id="retryTimeQBtn">Tekrar Dene</button>
+                </div>
+            `;
+            
+            document.getElementById('retryTimeQBtn').addEventListener('click', () => {
+                this.timeQuestionsExercise();
+            });
+        }
+
+        document.querySelectorAll('.time-option, .quiz-option').forEach(btn => {
+            btn.disabled = true;
+            if (btn.dataset.answer === correct) {
+                btn.classList.add('correct');
+            } else if (btn.dataset.answer === selected) {
+                btn.classList.add('incorrect');
+            }
+        });
+
+        this.updateScore();
     }
 
     checkSequence(userOrder, correctOrder) {
@@ -487,16 +571,24 @@ class TimeExercises {
             feedback.innerHTML = `
                 <div class="feedback-correct">
                     ✅ Mükemmel! Doğru sıralama!
-                    <button class="btn-primary" onclick="location.reload()">Sonraki Soru</button>
+                    <button class="btn btn-primary" id="nextSequenceBtn">Sonraki Soru</button>
                 </div>
             `;
+            
+            document.getElementById('nextSequenceBtn').addEventListener('click', () => {
+                this.orderDailyExercise();
+            });
         } else {
             feedback.innerHTML = `
                 <div class="feedback-incorrect">
                     ❌ Sıralama yanlış. Tekrar dene!
-                    <button class="btn-secondary" onclick="location.reload()">Yeniden Başlat</button>
+                    <button class="btn btn-secondary" id="retrySequenceBtn">Yeniden Başlat</button>
                 </div>
             `;
+            
+            document.getElementById('retrySequenceBtn').addEventListener('click', () => {
+                this.orderDailyExercise();
+            });
         }
 
         this.updateScore();

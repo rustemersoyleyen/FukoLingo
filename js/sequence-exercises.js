@@ -306,7 +306,7 @@ class SequenceExercises {
 
         document.querySelectorAll('.ordinal-option').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                this.checkAnswer(e.target.dataset.answer, question.ordinal);
+                this.checkAnswer(e.target.dataset.answer, question.ordinal, 'ordinalNumbers');
             });
         });
     }
@@ -388,7 +388,7 @@ class SequenceExercises {
 
         document.querySelectorAll('.quiz-option').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                this.checkAnswer(e.target.dataset.answer, question.correct);
+                this.checkAnswer(e.target.dataset.answer, question.correct, 'monthQuiz');
             });
         });
     }
@@ -450,7 +450,13 @@ class SequenceExercises {
             const currentOrder = Array.from(currentBlocks).map(b => parseInt(b.dataset.order));
             const correctOrder = correctData.sort((a, b) => a.order - b.order).map(d => d.order);
             
-            this.checkSequence(currentOrder, correctOrder);
+            // Hangi egzersizde olduğumuzu belirle
+            const exerciseTitle = document.querySelector('.exercise-header h3').textContent;
+            let exerciseType = 'orderMonths'; // varsayılan
+            if (exerciseTitle.includes('Günler')) exerciseType = 'orderDays';
+            if (exerciseTitle.includes('Mevsim')) exerciseType = 'orderSeasons';
+            
+            this.checkSequence(currentOrder, correctOrder, exerciseType);
         });
 
         // Yeniden başlat butonu
@@ -479,7 +485,7 @@ class SequenceExercises {
         return this.shuffleArray(options);
     }
 
-    checkAnswer(selected, correct) {
+    checkAnswer(selected, correct, exerciseType) {
         this.totalQuestions++;
         const feedback = document.getElementById('feedback');
         const buttons = document.querySelectorAll('button[data-answer]');
@@ -492,9 +498,14 @@ class SequenceExercises {
             feedback.innerHTML = `
                 <div class="feedback-correct">
                     ✅ Harika! Doğru cevap!
-                    <button class="btn-primary" onclick="location.reload()">Sonraki Soru</button>
+                    <button class="btn btn-primary" id="nextSeqBtn">Sonraki Soru</button>
                 </div>
             `;
+            
+            // Her egzersiz tipi için uygun fonksiyonu çağır
+            document.getElementById('nextSeqBtn').addEventListener('click', () => {
+                this.startExercise(exerciseType);
+            });
             
             buttons.forEach(btn => {
                 if (btn.dataset.answer === correct) {
@@ -505,9 +516,13 @@ class SequenceExercises {
             feedback.innerHTML = `
                 <div class="feedback-incorrect">
                     ❌ Yanlış. Doğru cevap: <strong>${correct}</strong>
-                    <button class="btn-primary" onclick="location.reload()">Tekrar Dene</button>
+                    <button class="btn btn-secondary" id="retrySeqBtn">Tekrar Dene</button>
                 </div>
             `;
+            
+            document.getElementById('retrySeqBtn').addEventListener('click', () => {
+                this.startExercise(exerciseType);
+            });
             
             buttons.forEach(btn => {
                 if (btn.dataset.answer === correct) {
@@ -521,7 +536,7 @@ class SequenceExercises {
         this.updateScore();
     }
 
-    checkSequence(userOrder, correctOrder) {
+    checkSequence(userOrder, correctOrder, exerciseType) {
         this.totalQuestions++;
         const feedback = document.getElementById('feedback');
         const isCorrect = JSON.stringify(userOrder) === JSON.stringify(correctOrder);
@@ -532,16 +547,25 @@ class SequenceExercises {
             feedback.innerHTML = `
                 <div class="feedback-correct">
                     🎉 Mükemmel! Tüm sıralama doğru!
-                    <button class="btn-primary" onclick="location.reload()">Yeni Soru</button>
+                    <button class="btn btn-primary" id="nextSeqOrderBtn">Yeni Soru</button>
                 </div>
             `;
+            
+            document.getElementById('nextSeqOrderBtn').addEventListener('click', () => {
+                this.startExercise(exerciseType);
+            });
         } else {
             feedback.innerHTML = `
                 <div class="feedback-incorrect">
                     ❌ Sıralama doğru değil. Tekrar dene!
                     <p class="hint">İpucu: Doğru sırayı düşün ve kartları yeniden düzenle.</p>
+                    <button class="btn btn-secondary" id="retrySeqOrderBtn">Yeniden Başlat</button>
                 </div>
             `;
+            
+            document.getElementById('retrySeqOrderBtn').addEventListener('click', () => {
+                this.startExercise(exerciseType);
+            });
         }
 
         this.updateScore();
